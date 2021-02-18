@@ -7,7 +7,7 @@ linked data support.
 ## Installation
 
 ```sh
-helm repo add fcrepo https://samvera-labs.github.com/fcrepo-chart
+helm repo add fcrepo https://samvera-labs.github.com/fcrepo-charts
 helm install fcrepo
 ```
 

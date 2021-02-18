@@ -16,5 +16,5 @@ spec:
     requests:
       storage: {{ default .Values.storage.size "1Gi" }}
   {{- if .Values.storage.className }}
-  storageClassName: "{{ .Values.storage.ClassName }}"
+  storageClassName: "{{ .Values.storage.className }}"
   {{- end }}
