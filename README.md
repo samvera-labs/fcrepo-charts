@@ -7,6 +7,13 @@ linked data support.
 ## Installation
 
 ```sh
+helm repo add fcrepo https://samvera-labs.github.com/fcrepo-chart
+helm install fcrepo
+```
+
+### Or from local
+
+```sh
 helm dep up chart/fcrepo
 helm install fcrepo chart/fcrepo
 ```
@@ -50,11 +57,12 @@ helm install --set postgresql.enabled=false fcrepo-test chart/fcrepo
 ## Storage
 If binary storage in S3 is desired, then please specify the following values
 
+```yaml
 s3:
   enabled: true
   bucket:
   access_key:
   secret_key:
-
+```
 
 This will enable S3 support, which is only supported in Fcrepo 4.7.5+
