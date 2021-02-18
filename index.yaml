@@ -3,7 +3,7 @@ entries:
   fcrepo:
   - apiVersion: v2
     appVersion: "4.7"
-    created: "2021-02-17T16:36:06.498049-08:00"
+    created: "2021-02-17T16:44:53.266031-08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -21,7 +21,7 @@ entries:
       category: Database
     apiVersion: v1
     appVersion: 11.9.0
-    created: "2021-02-17T16:36:06.500622-08:00"
+    created: "2021-02-17T16:44:53.26882-08:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -49,4 +49,4 @@ entries:
     urls:
     - charts/postgresql-9.3.3.tgz
     version: 9.3.3
-generated: "2021-02-17T16:36:06.493968-08:00"
+generated: "2021-02-17T16:44:53.259964-08:00"
