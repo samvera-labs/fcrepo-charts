@@ -50,7 +50,7 @@ fcrepo:
   servicePort: 8080
   postgresql:
     enabled: false
-    postgresqlHost: someurl.rds.amazonaws.com
+    postgresqlHost: someurl.rds.amazonaws.com # Optional, only specify if not using internal chart defined postgersql
     postgresqlUsername: yourUser # Optional, may be defined globally
     postgresqlPassword: wouldntyouliketoknow  # Optional, may be defined globally
 ```
