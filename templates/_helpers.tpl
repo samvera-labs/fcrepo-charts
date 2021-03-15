@@ -71,20 +71,25 @@ Create the name of the service account to use
 Return PostgreSQL host
 */}}
 {{- define "fcrepo.postgresql.host" }}
-{{- if not .Values.postgresql.enabled }}
-    {{- .Values.postgresql.postgresqlHost }}
-{- else }}
+{{- if not .Values.postgresql.enabled and .Values.externalPostgresql.host }}
+    {{- .Values.externalPostgresql.host }}
+{{- else if not .Values.postgresql.enabled and .Values.global.postgresql.postgresqlHost }}
+    {{- .Values.global.postgresql.postgresqlHost }}
+{{- else }}
     {{- include "fcrepo.postgresql.fullname" . }}
+{{- end }}
 {{- end }}
 
 {{/*
 Return PostgreSQL username
 */}}
 {{- define "fcrepo.postgresql.username" }}
-{{- if .Values.global.postgresql.postgresqlUsername }}
-     {{- .Values.global.postgresql.postgresqlUsername }}
+{{- if not .Values.postgresql.enabled and .Values.externalPostgresql.username }}
+    {{- .Values.externalPostgresql.username }}
+{{- else if not .Values.postgresql.enabled and .Values.global.postgresql.postgresqlUsername }}
+    {{- .Values.global.postgresql.postgresqlUsername }}
 {{- else }}
-     {{- .Values.postgresql.postgresqlUsername }}
+    {{- .Values.postgresql.postgresqlUsername }}
 {{- end }}
 {{- end }}
 
@@ -92,11 +97,11 @@ Return PostgreSQL username
 Return PostgreSQL password
 */}}
 {{- define "fcrepo.postgresql.password" }}
-{{- if .Values.global.postgresql.postgresqlPassword }}
+{{- if not .Values.postgresql.enabled and .Values.externalPostgresql.password }}
+    {{- .Values.externalPostgresql.password }}
+{{- else if not .Values.postgresql.enabled and .Values.global.postgresql.postgresqlPassword }}
     {{- .Values.global.postgresql.postgresqlPassword }}
-{{- else if .Values.postgresql.postgresqlPassword }}
-    {{- .Values.postgresql.postgresqlPassword }}
 {{- else }}
-    {{- randAlphaNum 10 }}
+    {{- .Values.postgresql.postgresqlPassword }}
 {{- end }}
 {{- end }}

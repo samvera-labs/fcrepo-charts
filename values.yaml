@@ -68,6 +68,8 @@ postgresql:
   postgresqlDatabase: fcrepo
   servicePort: 5432
 
+externalPostgresql: {}
+
 global:
   postgresql: {}
 

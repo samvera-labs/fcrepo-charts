@@ -38,10 +38,11 @@ environment you may wish to reuse an existing Postgres instance already
 maintained with that environment.
 
 In this case, `fcrepo` should be deployed with postgresql explictly disabled, but
-postgresqlHost set to your upstream value. postgresqlPassword and postgresqlUsername
-can be set here or will default to the global values if those are provided. For example
-.Values.global.postgersql.postgresqlUsername will override .Values.postgersql.postgresqlUsername.
-
+externalPostgresql.host or global.postgresql.postgresqlHost set to your upstream value.
+externalPostgresql.password and externalPostgresql.username or global.postgresql.postgresqlPassword
+and global.postgresql.postgresqlUsername can be used as needed depending on your set up. If both
+externalPostgresql.password and globa.postgresql.postgresqlPassword are set, then
+externalPostgresql.password is used as an override.
 This is usually done in the context of a parent chart which provides the postgresql instance, for example:
 
 ```yaml
@@ -50,9 +51,11 @@ fcrepo:
   servicePort: 8080
   postgresql:
     enabled: false
-    postgresqlHost: someurl.rds.amazonaws.com # Optional, only specify if not using internal chart defined postgersql
-    postgresqlUsername: yourUser # Optional, may be defined globally
-    postgresqlPassword: wouldntyouliketoknow  # Optional, may be defined globally
+  externalPostgresql:
+    host: someurl.rds.amazonaws.com
+    username: yourUser # Optional, may be defined globally
+    password: wouldntyouliketoknow  # Optional, may be defined globally
+
 ```
 
 _Second_, because they want to use another backend for Fedora. This use case is broadly unsupported here. In theory, you can get a default (Infinispan) configuration by setting `postgresql.enabled` to `false`. **THIS CONFIGURATION IS NOT SUPPORTED AT THIS TIME**:
