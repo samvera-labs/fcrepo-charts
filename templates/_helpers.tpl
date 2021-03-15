@@ -68,6 +68,13 @@ Create the name of the service account to use
 {{- end -}}
 
 {{/*
+Return PostgreSQL host
+*/}}
+{{- define "postgresql.host" -}}
+{{- include "fcrepo.postgresql.fullname" . }}
+{{- end -}}
+
+{{/*
 Return PostgreSQL username
 */}}
 {{- define "postgresql.username" -}}
