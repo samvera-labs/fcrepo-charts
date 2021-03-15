@@ -3,14 +3,14 @@ entries:
   fcrepo:
   - apiVersion: v2
     appVersion: 4.7.5
-    created: "2021-03-15T00:10:17.100008-07:00"
+    created: "2021-03-15T00:18:40.552884-07:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
       repository: https://charts.bitnami.com/bitnami
       version: 9.3.3
     description: Fedora Commons Repository 4
-    digest: bf0616bb76882580571c28570627ad7fbeda615a16b86db5eaa35bebc1b431fb
+    digest: 320a005b0e1954b53d5e567c0fcfe20c1ebc7d683329f652b8a157e7d0a4878e
     name: fcrepo
     type: application
     urls:
@@ -18,7 +18,7 @@ entries:
     version: 0.5.3
   - apiVersion: v2
     appVersion: 4.7.5
-    created: "2021-03-15T00:10:17.091553-07:00"
+    created: "2021-03-15T00:18:40.538806-07:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -33,7 +33,7 @@ entries:
     version: 0.5.2
   - apiVersion: v2
     appVersion: 4.7.5
-    created: "2021-03-15T00:10:17.084683-07:00"
+    created: "2021-03-15T00:18:40.531557-07:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -48,7 +48,7 @@ entries:
     version: 0.5.1
   - apiVersion: v2
     appVersion: 4.7.5
-    created: "2021-03-15T00:10:17.080316-07:00"
+    created: "2021-03-15T00:18:40.527266-07:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -63,7 +63,7 @@ entries:
     version: 0.5.0
   - apiVersion: v2
     appVersion: "4.7"
-    created: "2021-03-15T00:10:17.076765-07:00"
+    created: "2021-03-15T00:18:40.523597-07:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -81,7 +81,7 @@ entries:
       category: Database
     apiVersion: v1
     appVersion: 11.9.0
-    created: "2021-03-15T00:10:17.102386-07:00"
+    created: "2021-03-15T00:18:40.555337-07:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -109,4 +109,4 @@ entries:
     urls:
     - https://samvera-labs.github.io/fcrepo-charts/charts/postgresql-9.3.3.tgz
     version: 9.3.3
-generated: "2021-03-15T00:10:17.072745-07:00"
+generated: "2021-03-15T00:18:40.519622-07:00"
