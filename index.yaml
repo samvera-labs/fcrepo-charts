@@ -3,7 +3,7 @@ entries:
   fcrepo:
   - apiVersion: v2
     appVersion: 4.7.5
-    created: "2021-03-14T23:22:29.153679-07:00"
+    created: "2021-03-14T23:37:47.524953-07:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -14,11 +14,11 @@ entries:
     name: fcrepo
     type: application
     urls:
-    - fcrepo-0.5.1.tgz
+    - https://samvera-labs.github.io/fcrepo-charts/fcrepo-0.5.1.tgz
     version: 0.5.1
   - apiVersion: v2
     appVersion: 4.7.5
-    created: "2021-03-14T23:22:29.149336-07:00"
+    created: "2021-03-14T23:37:47.518936-07:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -29,11 +29,11 @@ entries:
     name: fcrepo
     type: application
     urls:
-    - fcrepo-0.5.0.tgz
+    - https://samvera-labs.github.io/fcrepo-charts/fcrepo-0.5.0.tgz
     version: 0.5.0
   - apiVersion: v2
     appVersion: "4.7"
-    created: "2021-03-14T23:22:29.145688-07:00"
+    created: "2021-03-14T23:37:47.514884-07:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -44,14 +44,14 @@ entries:
     name: fcrepo
     type: application
     urls:
-    - fcrepo-0.4.1.tgz
+    - https://samvera-labs.github.io/fcrepo-charts/fcrepo-0.4.1.tgz
     version: 0.4.1
   postgresql:
   - annotations:
       category: Database
     apiVersion: v1
     appVersion: 11.9.0
-    created: "2021-03-14T23:22:29.157121-07:00"
+    created: "2021-03-14T23:37:47.528198-07:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -77,6 +77,6 @@ entries:
     sources:
     - https://github.com/bitnami/bitnami-docker-postgresql
     urls:
-    - charts/postgresql-9.3.3.tgz
+    - https://samvera-labs.github.io/fcrepo-charts/charts/postgresql-9.3.3.tgz
     version: 9.3.3
-generated: "2021-03-14T23:22:29.14124-07:00"
+generated: "2021-03-14T23:37:47.508779-07:00"

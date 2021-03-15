@@ -22,7 +22,7 @@ helm install fcrepo chart/fcrepo
 
 - Bump the version in the Chart.yaml
 - Run `helm package .`
-- Run `helm repo index .`
+- Run `helm repo index . --url https://samvera-labs.github.io/fcrepo-charts`
 - Add files to git and push
 
 ## Configuration
