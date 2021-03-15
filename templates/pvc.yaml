@@ -14,7 +14,7 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: {{ default .Values.storage.size "1Gi" }}
+      storage: {{ .Values.storage.size | default "1Gi" }}
   {{- if .Values.storage.className }}
   storageClassName: "{{ .Values.storage.className }}"
   {{- end }}
