@@ -67,11 +67,11 @@ postgresql:
   postgresqlPassword: fcrepo_pass
   postgresqlDatabase: fcrepo
   servicePort: 5432
-  postgresqlHost: postgresql
+
+externalPostgresql: {}
 
 global:
   postgresql: {}
-
 
 s3:
   enabled: false
