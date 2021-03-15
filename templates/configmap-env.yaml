@@ -10,6 +10,6 @@ metadata:
 data:
   DATABASE_NAME: {{ .Values.postgresql.postgresqlDatabase }}
   DATABASE_USER: {{ .Values.postgresql.postgresqlUsername }}
-  {{- if .Values.postgesql.postgresqlHost }}
+  {{- if .Values.postgresql.postgresqlHost }}
   DATABASE_HOST: {{ .Values.postgresql.postgresqlHost }}
   {{- end }}
