@@ -2,8 +2,38 @@ apiVersion: v1
 entries:
   fcrepo:
   - apiVersion: v2
+    appVersion: 4.7.5
+    created: "2021-03-14T23:22:29.153679-07:00"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 9.3.3
+    description: Fedora Commons Repository 4
+    digest: 971444f3b23d7cb4c961b404838e3398f5b84465b661b4bf87bfefbb1990944e
+    name: fcrepo
+    type: application
+    urls:
+    - fcrepo-0.5.1.tgz
+    version: 0.5.1
+  - apiVersion: v2
+    appVersion: 4.7.5
+    created: "2021-03-14T23:22:29.149336-07:00"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 9.3.3
+    description: Fedora Commons Repository 4
+    digest: 8eb263e7c994aee8ec890a13cc2e21e846bb12fe51d0de67faa1305817fed248
+    name: fcrepo
+    type: application
+    urls:
+    - fcrepo-0.5.0.tgz
+    version: 0.5.0
+  - apiVersion: v2
     appVersion: "4.7"
-    created: "2021-02-17T16:44:53.266031-08:00"
+    created: "2021-03-14T23:22:29.145688-07:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -21,7 +51,7 @@ entries:
       category: Database
     apiVersion: v1
     appVersion: 11.9.0
-    created: "2021-02-17T16:44:53.26882-08:00"
+    created: "2021-03-14T23:22:29.157121-07:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -49,4 +79,4 @@ entries:
     urls:
     - charts/postgresql-9.3.3.tgz
     version: 9.3.3
-generated: "2021-02-17T16:44:53.259964-08:00"
+generated: "2021-03-14T23:22:29.14124-07:00"

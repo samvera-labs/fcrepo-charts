@@ -18,6 +18,13 @@ helm dep up chart/fcrepo
 helm install fcrepo chart/fcrepo
 ```
 
+### Release a new version
+
+- Bump the version in the Chart.yaml
+- Run `helm package .`
+- Run `helm repo index .`
+- Add files to git and push
+
 ## Configuration
 
 By default, this chart deploys with Postgresql as the backend for Fedora.
