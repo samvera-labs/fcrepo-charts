@@ -71,7 +71,7 @@ Create the name of the service account to use
 Return PostgreSQL host
 */}}
 {{- define "fcrepo.postgresql.host" }}
-{{- if .Values.postgresql.postgresqlHost }}
+{{- if not .Values.postgresql.enabled }}
     {{- .Values.postgresql.postgresqlHost }}
 {- else }}
     {{- include "fcrepo.postgresql.fullname" . }}
