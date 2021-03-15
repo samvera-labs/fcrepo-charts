@@ -74,7 +74,7 @@ Return PostgreSQL username
 {{- if .Values.global.postgresql.postgresqlUsername }}
     {{- .Values.global.postgresql.postgresqlUsername -}}
 {{- else -}}
-    {{- .Values.postgresqlUsername -}}
+    {{- .Values.postgresql.postgresqlUsername -}}
 {{- end -}}
 {{- end -}}
 
