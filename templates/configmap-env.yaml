@@ -9,7 +9,7 @@ metadata:
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 data:
   DATABASE_NAME: {{ .Values.postgresql.postgresqlDatabase }}
-  DATABASE_USER: {{ .Values.postgresql.postgresqlUsername }}
+  DATABASE_USER: {{ include "postgresql.username" . }}
   {{- if .Values.postgresql.postgresqlHost }}
   DATABASE_HOST: {{ .Values.postgresql.postgresqlHost }}
   {{- end }}
