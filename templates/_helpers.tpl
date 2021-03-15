@@ -70,29 +70,29 @@ Create the name of the service account to use
 {{/*
 Return PostgreSQL host
 */}}
-{{- define "postgresql.host" -}}
+{{- define "fcrepo.postgresql.host" -}}
 {{- include "fcrepo.postgresql.fullname" . }}
 {{- end -}}
 
 {{/*
 Return PostgreSQL username
 */}}
-{{- define "postgresql.username" -}}
+{{- define "fcrepo.postgresql.username" -}}
 {{- if .Values.global.postgresql.postgresqlUsername }}
     {{- .Values.global.postgresql.postgresqlUsername -}}
 {{- else -}}
-    {{- .Values.postgresqlUsername -}}
+    {{- .Values.postgresql.postgresqlUsername -}}
 {{- end -}}
 {{- end -}}
 
 {{/*
 Return PostgreSQL password
 */}}
-{{- define "postgresql.password" -}}
+{{- define "fcrepo.postgresql.password" -}}
 {{- if .Values.global.postgresql.postgresqlPassword }}
-    {{- .Values.global.postgresql.postgresqlPassword -}}
-{{- else if .Values.postgresqlPassword -}}
-    {{- .Values.postgresqlPassword -}}
+    {{- .Values.global.postgresql.postgresqlPassword }}
+{{- else if .Values.postgresql.postgresqlPassword -}}
+    {{- .Values.postgresql.postgresqlPassword }}
 {{- else -}}
     {{- randAlphaNum 10 -}}
 {{- end -}}
