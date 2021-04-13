@@ -5,6 +5,9 @@
 replicaCount: 1
 
 storage: {}
+  # enabled: true
+  # size: 5.5Ti
+  # existingClaim: optionalExistingClaimName
 
 image:
   repository: samvera/fcrepo4
