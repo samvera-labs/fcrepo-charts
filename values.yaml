@@ -10,7 +10,7 @@ storage: {}
   # existingClaim: optionalExistingClaimName
 
 image:
-  repository: samvera/fcrepo4
+  repository: ghcr.io/samvera/fcrepo4
   pullPolicy: IfNotPresent
   tag: 4.7.5
 
