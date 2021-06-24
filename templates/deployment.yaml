@@ -30,8 +30,15 @@ spec:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       volumes:
         - name: data
+          {{- if and .Values.storage.enabled .Values.storage.existingClaim }}
+          persistentVolumeClaim:
+            claimName: {{ .Values.storage.existingClaim }}
+          {{- else if .Values.storage.enabled }}
           persistentVolumeClaim:
             claimName: {{ template "fcrepo.fullname" . }}
+          {{ else }}
+          emptyDir: {}
+          {{ end }}
       initContainers:
         - name: "remove-lost-found"
           image: "busybox:1.32.0"
