@@ -105,3 +105,10 @@ Return PostgreSQL password
     {{- .Values.postgresql.postgresqlPassword }}
 {{- end }}
 {{- end }}
+
+{{/*
+Return any addtional options to the JVM
+*/}}
+{{- define "fcrepo.additional_java_options" }}
+{{- default " " .Values.additional_java_options }}
+{{- end }}
