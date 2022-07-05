@@ -39,9 +39,9 @@ maintained with that environment.
 
 In this case, `fcrepo` should be deployed with postgresql explictly disabled, but
 externalPostgresql.host or global.postgresql.postgresqlHost set to your upstream value.
-externalPostgresql.password and externalPostgresql.username or global.postgresql.postgresqlPassword
-and global.postgresql.postgresqlUsername can be used as needed depending on your set up. If both
-externalPostgresql.password and globa.postgresql.postgresqlPassword are set, then
+externalPostgresql.password and externalPostgresql.username or `global.postgresql.auth.password`
+and `global.postgresql.auth.username` can be used as needed depending on your set up. If both
+externalPostgresql.password and `global.postgresql.auth.password` are set, then
 externalPostgresql.password is used as an override.
 This is usually done in the context of a parent chart which provides the postgresql instance, for example:
 

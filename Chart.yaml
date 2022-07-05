@@ -2,10 +2,10 @@ apiVersion: v2
 name: fcrepo
 description: Fedora Commons Repository 4
 type: application
-version: 0.8.1
+version: 1.0.0
 appVersion: 4.7.5
 dependencies:
   - name: postgresql
-    version: 9.3.3
-    repository: https://charts.bitnami.com/bitnami
+    version: 11.6.12
+    repository: https://raw.githubusercontent.com/bitnami/charts/archive-full-index/bitnami
     condition: postgresql.enabled

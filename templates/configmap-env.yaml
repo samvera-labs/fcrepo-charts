@@ -8,6 +8,6 @@ metadata:
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 data:
-  DATABASE_NAME: {{ .Values.postgresql.postgresqlDatabase }}
+  DATABASE_NAME: {{ .Values.postgresql.auth.database }}
   DATABASE_USER: {{ include "fcrepo.postgresql.username" . }}
   DATABASE_HOST: {{ include "fcrepo.postgresql.host" . }}

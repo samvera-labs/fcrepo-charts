@@ -86,10 +86,10 @@ Return PostgreSQL username
 {{- define "fcrepo.postgresql.username" }}
 {{- if and (not .Values.postgresql.enabled) .Values.externalPostgresql.username }}
     {{- .Values.externalPostgresql.username }}
-{{- else if and (not .Values.postgresql.enabled) .Values.global.postgresql.postgresqlUsername }}
-    {{- .Values.global.postgresql.postgresqlUsername }}
+{{- else if and (not .Values.postgresql.enabled) .Values.global.postgresql.auth.username }}
+    {{- .Values.global.postgresql.auth.username }}
 {{- else }}
-    {{- .Values.postgresql.postgresqlUsername }}
+    {{- .Values.postgresql.auth.username }}
 {{- end }}
 {{- end }}
 
@@ -99,10 +99,10 @@ Return PostgreSQL password
 {{- define "fcrepo.postgresql.password" }}
 {{- if and (not .Values.postgresql.enabled) .Values.externalPostgresql.password }}
     {{- .Values.externalPostgresql.password }}
-{{- else if and (not .Values.postgresql.enabled) .Values.global.postgresql.postgresqlPassword }}
-    {{- .Values.global.postgresql.postgresqlPassword }}
+{{- else if and (not .Values.postgresql.enabled) .Values.global.postgresql.auth.password }}
+    {{- .Values.global.postgresql.auth.password }}
 {{- else }}
-    {{- .Values.postgresql.postgresqlPassword }}
+    {{- .Values.postgresql.auth.password }}
 {{- end }}
 {{- end }}
 
