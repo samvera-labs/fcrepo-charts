@@ -65,12 +65,13 @@ postgresql:
   enabled: true
   image:
     repository: bitnami/postgresql
-    tag: 12.11.0-debian-11-r12
+    tag: 12.17.0-debian-11-r28
   auth:
     username: fcrepo
     password: fcrepo_pass
     database: fcrepo
-  servicePort: 5432
+  containerPorts:
+    postgresql: 5432
 
 externalPostgresql: {}
 
