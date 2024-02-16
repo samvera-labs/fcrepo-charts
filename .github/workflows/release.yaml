@@ -17,7 +17,7 @@ on:
         required: false
         default: false
 env:
-  FAKE: ${{ env.GITHUB_ACTION_PATH }}/
+  FAKE: "${{ env.GITHUB_ACTION_PATH }}/"
 
 jobs:
   release:
@@ -49,4 +49,4 @@ jobs:
             oci_username: username
             oci_password: ${{ secrets.GITHUB_TOKEN }}
             github_token: ${{ secrets.GITHUB_TOKEN }}
-            charts_dir: ${{ env.GITHUB_ACTION_PATH }}/
+            charts_dir: "${{ env.GITHUB_ACTION_PATH }}/"
