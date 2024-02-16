@@ -1,0 +1,136 @@
+{{/* vim: set filetype=mustache: */}}
+{{/*
+Expand the name of the chart.
+*/}}
+{{- define "fcrepo.name" }}
+{{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
+{{- end }}
+
+{{/*
+Create a default fully qualified app name.
+We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
+If release name contains chart name it will be used as a full name.
+*/}}
+{{- define "fcrepo.fullname" }}
+{{- if .Values.fullnameOverride }}
+{{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
+{{- else }}
+{{- $name := default .Chart.Name .Values.nameOverride }}
+{{- if contains $name .Release.Name }}
+{{- .Release.Name | trunc 63 | trimSuffix "-" }}
+{{- else }}
+{{- printf "%s-%s" .Release.Name $name | trunc 63 | trimSuffix "-" }}
+{{- end }}
+{{- end }}
+{{- end }}
+
+{{/*
+Create chart name and version as used by the chart label.
+*/}}
+{{- define "fcrepo.chart" }}
+{{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
+{{- end }}
+
+{{/*
+Common labels
+*/}}
+{{- define "fcrepo.labels" }}
+helm.sh/chart: {{ include "fcrepo.chart" . }}
+{{ include "fcrepo.selectorLabels" . }}
+{{- if .Chart.AppVersion }}
+app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+{{- end }}
+app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{- end }}
+
+{{/*
+Selector labels
+*/}}
+{{- define "fcrepo.selectorLabels" }}
+app.kubernetes.io/name: {{ include "fcrepo.name" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+{{- end }}
+
+{{/*
+Create the name of the service account to use
+*/}}
+{{- define "fcrepo.serviceAccountName" }}
+{{- if .Values.serviceAccount.create }}
+{{- default (include "fcrepo.fullname" .) .Values.serviceAccount.name }}
+{{- else }}
+{{- default "default" .Values.serviceAccount.name }}
+{{- end }}
+{{- end }}
+
+{{- define "fcrepo.postgresql.fullname" }}
+{{- $name := default "postgresql" .Values.postgresql.nameOverride }}
+{{- printf "%s-%s" .Release.Name $name | trunc 63 | trimSuffix "-" }}
+{{- end }}
+
+{{/*
+Return PostgreSQL host
+*/}}
+{{- define "fcrepo.postgresql.host" }}
+{{- if not .Values.postgresql.enabled and .Values.externalPostgresql.host }}
+    {{- .Values.externalPostgresql.host }}
+{{- else if not .Values.postgresql.enabled and .Values.global.postgresql.postgresqlHost }}
+    {{- .Values.global.postgresql.postgresqlHost }}
+{{- else }}
+    {{- include "fcrepo.postgresql.fullname" . }}
+{{- end }}
+{{- end }}
+
+{{/*
+Return PostgreSQL host
+*/}}
+{{- define "fcrepo.postgresql.host" -}}
+{{- include "fcrepo.postgresql.fullname" . }}
+{{- end -}}
+
+{{/*
+Return PostgreSQL username
+*/}}
+<<<<<<< HEAD
+{{- define "fcrepo.postgresql.username" -}}
+{{- if .Values.global.postgresql.postgresqlUsername }}
+    {{- .Values.global.postgresql.postgresqlUsername -}}
+{{- else -}}
+    {{- .Values.postgresql.postgresqlUsername -}}
+{{- end -}}
+{{- end -}}
+=======
+{{- define "fcrepo.postgresql.username" }}
+{{- if not .Values.postgresql.enabled and .Values.externalPostgresql.username }}
+    {{- .Values.externalPostgresql.username }}
+{{- else if not .Values.postgresql.enabled and .Values.global.postgresql.postgresqlUsername }}
+    {{- .Values.global.postgresql.postgresqlUsername }}
+{{- else }}
+    {{- .Values.postgresql.postgresqlUsername }}
+{{- end }}
+{{- end }}
+>>>>>>> 914256fb7f94a311919db7cf8a93bbbb0cd65bfd
+
+{{/*
+Return PostgreSQL password
+*/}}
+<<<<<<< HEAD
+{{- define "fcrepo.postgresql.password" -}}
+{{- if .Values.global.postgresql.postgresqlPassword }}
+    {{- .Values.global.postgresql.postgresqlPassword }}
+{{- else if .Values.postgresql.postgresqlPassword -}}
+    {{- .Values.postgresql.postgresqlPassword }}
+{{- else -}}
+    {{- randAlphaNum 10 -}}
+{{- end -}}
+{{- end -}}
+=======
+{{- define "fcrepo.postgresql.password" }}
+{{- if not .Values.postgresql.enabled and .Values.externalPostgresql.password }}
+    {{- .Values.externalPostgresql.password }}
+{{- else if not .Values.postgresql.enabled and .Values.global.postgresql.postgresqlPassword }}
+    {{- .Values.global.postgresql.postgresqlPassword }}
+{{- else }}
+    {{- .Values.postgresql.postgresqlPassword }}
+{{- end }}
+{{- end }}
+>>>>>>> 914256fb7f94a311919db7cf8a93bbbb0cd65bfd

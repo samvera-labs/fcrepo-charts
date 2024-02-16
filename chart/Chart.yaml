@@ -2,7 +2,7 @@ apiVersion: v2
 name: fcrepo
 description: Fedora Commons Repository 4
 type: application
-version: 2.0.0
+version: 2.0.1
 appVersion: 4.7.5
 dependencies:
   - name: postgresql
