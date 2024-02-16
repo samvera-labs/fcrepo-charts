@@ -45,6 +45,6 @@ jobs:
             oci_registry: ghcr.io/samvera-labs
             oci_username: samvera-labs
             oci_password: ${{ secrets.GITHUB_TOKEN }}
-            oci_directory: charts
+            oci_path: charts
             github_token: ${{ secrets.GITHUB_TOKEN }}
             tag_name_pattern: "{chartName}-chart"
