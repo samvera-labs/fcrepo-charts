@@ -55,7 +55,7 @@ ingress:
     # kubernetes.io/tls-acme: "true"
   hosts:
     - host: fcrepo.local
-      paths: ['/']
+      paths: ["/"]
   tls: []
   #  - secretName: fcrepo-tls
   #    hosts:
@@ -64,7 +64,7 @@ ingress:
 postgresql:
   enabled: true
   image:
-    repository: bitnami/postgresql
+    repository: bitnamilegacy/postgresql
     tag: 12.17.0-debian-11-r28
   auth:
     username: fcrepo
