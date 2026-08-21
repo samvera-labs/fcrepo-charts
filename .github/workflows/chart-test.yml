@@ -1,0 +1,33 @@
+name: Chart Test
+run-name: Chart Test of ${{ github.ref_name }} by @${{ github.actor }}
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "chart/**"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "chart/**"
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - uses: azure/setup-helm@v5
+
+      - uses: helm/chart-testing-action@v2.8.0
+
+      - name: Run ct lint
+        run: ct lint --charts chart --validate-maintainers=false
